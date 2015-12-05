@@ -1,28 +1,24 @@
 [default]
-msglevel=all=5
-use-filename-title=1
-cache=81920
-cache-min=2
+msg-level=all=no
+title='${filename}'
+
 ao=pulse
-ac=ffmpeg,
-af=surround=15,center=4,channels=6,sub=60:5
-af-adv=force=5
+af=surround=20,center=4,channels=6,sub=60:5
+audio-samplerate=96000
+audio-channels=6
 volume=80
-srate=96000
-format=s16le
+
 vo=vdpau
-vc=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau
-vsync=1
-noslices=1
-hr-seek=always
+vd=ffmpeg12vdpau,ffwmv3vdpau,ffvc1vdpau,ffh264vdpau,ffodivxvdpau:libavcodec,ffmpeg12,libavcodec,
+hr-seek=yes
 hr-seek-framedrop=yes
 
+#some placeholders / extra config for various extenstions
 [gnome-mplayer]
 
 [smplayer]
 
 
-#placeholders / extra config for various extenstions
 [extension.mp3]
 profile-desc="mp3 audio files"
 
@@ -53,19 +49,23 @@ profile-desc="avi files"
 [extension.wmv]
 profile-desc="profile for .rm files"
 
+[extension.rm]
+profile-desc="profile for .rm files"
+
 [protocol.dvd]
-profile-desc="protocol for dvd://-Streams"
+profile-desc="Profile für dvd://-Streams"
 alang=en
-af=volume=-1
 
 [protocol.dvdnav]
-profile-desc="protocol for dvdnav://-Streams"
+profile-desc="Profile für dvdnav://-Streams"
 profile=protocol.dvd
-mouse-movements=yes
 
 [extension.mkv]
 profile-desc="mkv files"
 alang=eng
-channels=6
-#unset audio filters for native 5.1
+#unset audio filters
 af=volume=-1
+
+
+
+
