@@ -1,0 +1,21 @@
+vo=vdpau
+cache=8192
+#channels=6
+format=s16le
+ao=pulse
+vsync=1
+noslices=1
+msglevel=all=0
+use-filename-title=1
+lavdopts=threads=8
+af=center=4,channels=6,sub=60:5
+#ac=hwac3,a52,ffmpeg,
+
+
+[extension.mp3]
+profile-desc="for .mp3 files"
+af=surround=20,center=4,channels=6,sub=60:5
+ac=ffmp3,mad,nmp3acm,mpg321,a52,
+af-adv=force=5
+lavdopts=threads=4
+
